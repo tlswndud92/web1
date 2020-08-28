@@ -17,14 +17,7 @@
 </head>
 <body>
 <h1><a href="index.html">WEB</a></h1>
-<input type = "button" value ="night" onclick="
-document.querySelector('body').style.backgroundColor='black';
-document.querySelector('body').style.color='white';
-">
-<input type = "button" value ="day" onclick="
-document.querySelector('body').style.backgroundColor='white';
-document.querySelector('body').style.color='black';
-">
+
 <div id ="grid">
  <ol>
   <li><a href="1.html">HTML</a></li>
@@ -45,6 +38,33 @@ document.querySelector('body').style.color='black';
 
 CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
 </p>
+<input type ="button" value="night" onclick="
+var target = document.querySelector('body');
+if(this.value === 'night'){
+target.style.backgroundColor='black';
+target.style.color='white';
+this.value = 'day';
+
+var alist = document.querySelectorAll('a');
+var i = 0;
+while(i<alist.length){
+  alist[i].style.color = 'powderblue';
+  i=i+1;
+}
+} else {
+target.style.backgroundColor='white';
+target.style.color='black';
+target.style.backgroundColor='white';
+this.value='night';
+
+var alist = document.querySelectorAll('a');
+var i = 0;
+while(i<alist.length){
+  alist[i].style.color = 'blue';
+  i=i+1;
+}
+}
+">
 <p>
 </div>
 </div>
